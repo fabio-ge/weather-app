@@ -11,7 +11,7 @@ export class WeatherServiceService {
     .set('X-RapidAPI-Host', 'weatherapi-com.p.rapidapi.com')
     .set(
       'X-RapidAPI-Key',
-      'bde041a9e8msh12bda5e84e4ceb2p19e438jsnbc3246a073df'
+      '' //no more valid key
     );
   constructor(private http: HttpClient) {}
 
