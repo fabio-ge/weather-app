@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Previsioni del tempo</h1>
+  <form #f="ngForm" (submit)="onSubmit(f)">
+    <input type="text" name="city" placeholder="Find a city" ngModel />
+  </form>
+  <div class="content">
+    <app-upper-info [data]="weatherData"></app-upper-info>
+    <app-lower-info [data]="weatherData"></app-lower-info>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.upper {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 10px rgba(99, 99, 99, 0.8);
+  padding: 1em;
+  background-color: ghostwhite;
+  background-repeat: no-repeat;
+  background-position: right;
+}
