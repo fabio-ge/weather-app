@@ -1,3 +1,22 @@
+.dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1em;
+  height: 100%;
+}
+
+.dialog input:focus {
+  outline: none;
+}
+
+.dialog input,
+.dialog button {
+  color: inherit;
+}
+
 .container {
   display: flex;
   flex-direction: column;

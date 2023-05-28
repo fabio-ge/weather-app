@@ -7,17 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class WeatherServiceService {
   baseUrl: string = 'https://weatherapi-com.p.rapidapi.com/current.json';
-  headers: HttpHeaders = new HttpHeaders()
-    .set('X-RapidAPI-Host', 'weatherapi-com.p.rapidapi.com')
-    .set(
-      'X-RapidAPI-Key',
-      '' //no more valid key
-    );
+
   constructor(private http: HttpClient) {}
 
-  getWeatherData(cityName: string): Observable<any> {
+  getWeatherData(apiSecret: string | null, cityName: string): Observable<any> {
+    if (!apiSecret) apiSecret = '';
     return this.http.get<any>(this.baseUrl + '?q=' + cityName, {
-      headers: this.headers,
+      headers: new HttpHeaders()
+        .set('X-RapidAPI-Host', 'weatherapi-com.p.rapidapi.com')
+        .set('X-RapidAPI-Key', apiSecret),
     });
   }
 }

@@ -1,4 +1,13 @@
-<div class="container">
+<div class="dialog" *ngIf="!apiSecret">
+  <h1>
+    Attenzione questo servizio funziona solo se hai una chiave per Weather Api
+  </h1>
+  <p>Se ne hai una inseriscila qui per salvarla</p>
+  <input type="text" name="key" [(ngModel)]="key" />
+  <button (click)="saveKey()">Salva chiave</button>
+</div>
+
+<div class="container" *ngIf="apiSecret">
   <h1>Previsioni del tempo</h1>
   <form #f="ngForm" (submit)="onSubmit(f)">
     <input type="text" name="city" placeholder="Find a city" ngModel />
